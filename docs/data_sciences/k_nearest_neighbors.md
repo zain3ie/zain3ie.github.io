@@ -138,13 +138,16 @@ compute y_pred by (5)
 
 ## Implementasi
 ---
-### Membandingkan dengan Scikit-learn
+### Simple Application
 ---
 #### Import
 ``` py
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
+
+import matplotlib.pyplot as plt
+import seaborn as sns
 ```
 
 ``` py
@@ -165,9 +168,107 @@ y = iris.target
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=13)
 ```
 
+#### Simple model
+``` py
+clf = ScratchKNClassifier()
+clf.fit(X_train, y_train)
+y_pred = clf.predict(X_test)
+```
+
+#### Accuracy
+``` py
+num_correct_pred = (y_pred == y_test).sum()
+accuracy = (num_correct_pred / y_test.shape[0]) * 100
+
+print('model accuracy: %.2f%%' % accuracy)
+```
+
+```
+>> model accuracy: 89.47%
+```
+
+### Experiment dengan hyperparameter
+---
+#### Hyperparameter k (jumlah tetangga terdekat)
+``` py
+ks = [3, 5, 7, 9]
+k_accurations = []
+
+for k in ks:
+    clf = ScratchKNClassifier(n_neighbors=k)
+    clf.fit(X_train, y_train)
+    y_pred = clf.predict(X_test)
+
+    num_correct_pred = (y_pred == y_test).sum()
+    accuracy = (num_correct_pred / y_test.shape[0]) * 100
+
+    k_accurations.append(accuracy)
+```
+
+``` py
+ax = sns.barplot(x=ks, y=k_accurations)
+ax.set(xlabel='k-neighbors', ylabel='accuracy')
+ax.bar_label(ax.containers[0])
+plt.show()
+```
+
+![](images/k-accuracy.png)
+
+#### Hyperparameter p (power dari minkowski distance)
+``` py
+ps = [1, 2]
+p_accurations = []
+
+for p in ps:
+    clf = ScratchKNClassifier(p=p)
+    clf.fit(X_train, y_train)
+    y_pred = clf.predict(X_test)
+
+    num_correct_pred = (y_pred == y_test).sum()
+    accuracy = (num_correct_pred / y_test.shape[0]) * 100
+
+    p_accurations.append(accuracy)
+```
+
+``` py
+ax = sns.barplot(x=ps, y=p_accurations)
+ax.set(xlabel='power of minkowski distance', ylabel='accuracy')
+ax.bar_label(ax.containers[0])
+plt.show()
+```
+
+![](images/p-accuracy.png)
+
+#### Hyperparameter weights
+``` py
+ws = ['uniform', 'distance']
+w_accurations = []
+
+for w in ws:
+    clf = ScratchKNClassifier(weights=w)
+    clf.fit(X_train, y_train)
+    y_pred = clf.predict(X_test)
+
+    num_correct_pred = (y_pred == y_test).sum()
+    accuracy = (num_correct_pred / y_test.shape[0]) * 100
+
+    w_accurations.append(accuracy)
+```
+
+``` py
+ax = sns.barplot(x=ws, y=w_accurations)
+ax.set(xlabel='weight', ylabel='accuracy')
+ax.bar_label(ax.containers[0])
+plt.show()
+```
+
+![](images/w-accuracy.png)
+
+### Membandingkan dengan library sklearn
+---
 #### Prediksi menggunakan sklearn model
 ``` py
-sklearn_model = KNeighborsClassifier(n_neighbors=3, weights='distance')
+sklearn_model = KNeighborsClassifier(n_neighbors=3, p=1, weights='distance')
 sklearn_model.fit(X_train, y_train)
 sklearn_pred = sklearn_model.predict(X_test)
 ```
@@ -179,7 +280,7 @@ sklearn_accuracy = (sklearn_num_correct_pred / y_test.shape[0]) * 100
 
 #### Prediksi menggunakan scratch model
 ``` py
-scratch_model = ScratchKNClassifier(n_neighbors=3, weights='distance')
+scratch_model = ScratchKNClassifier(n_neighbors=3, p=1, weights='distance')
 scratch_model.fit(X_train, y_train)
 scratch_pred = scratch_model.predict(X_test)
 ```
