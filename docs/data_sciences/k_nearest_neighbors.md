@@ -20,8 +20,10 @@ Kumpulan dari tetangga terdekat
 
 Hyperparameter:
 
-- Nilai k: Menentukan jumlah tetangga terdekat yang akan digunakan untuk melakukan klasifikasi atau regresi
-- Metrik jarak: Menentukan metode pengukuran jarak antara titik data. Beberapa metrik jarak yang umum digunakan adalah _euclidean distance_, _manhattan distance_, dan _minkowski distance_
+- Nilai k: Menentukan jumlah tetangga terdekat yang akan digunakan untuk melakukan klasifikasi atau regresi. Nilai k yang lebih besar cenderung menghasilkan keputusan yang lebih stabil, tetapi dapat mengabaikan perbedaan yang lebih kecil antara kelas atau nilai target.
+
+- Metrik jarak: Menentukan metode pengukuran jarak antara titik data. Beberapa metrik jarak yang umum digunakan adalah `euclidean distance`, `manhattan distance`, dan `minkowski distance`. Secara umum kita menggunakan rumus dari `minkowski distance` di bawah. Apabila kita menggunakan m=2, artinya sama saja kita menggunakan `euclidean distance`. Bila menggunakan m=1, artinya kita mengguanakan `manhattan distance`.
+
 <center>
 \(
 \begin{align*}
@@ -29,8 +31,10 @@ d(x^{(i)}, x^{(j)}) = \left( \sum_{k=1}^{p} \left| x_k^{(i)} - x_k^{(j)} \right|
 \end{align*}
 \)
 </center>
-- Bobot jarak: Menentukan apakah tetangga terdekat akan diberi bobot berdasarkan jarak mereka. Bobot yang umum digunakan adalah _uniform_ dan _distance_
+
+- Bobot (weight): Menentukan apakah tetangga terdekat akan diberi bobot berdasarkan jarak mereka. Bobot yang umum digunakan adalah `uniform` dan `distance`. Pada bobot `uniform` artinya kita memberlakukan sama semua tetangga. Sedangkan pada bobot `distance`, semakin dekat jarak tetangga dengan titik yang diuji, maka semakin besar pengaruh tetangga tersebut. Kita akan menggunakan persamaan _inverse squared distance_ by _Tom Mitchell_ untuk menhgitung bobot `distance` dengan persamaan sebagai berikut:
 <center>
+
 \(
 \begin{align*}
 w^{(i)} = \frac{1}{d(x^{(i)}, x^{(j)})^2}  \tag{3}
