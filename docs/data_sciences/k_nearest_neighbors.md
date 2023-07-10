@@ -1,5 +1,7 @@
 # k-Nearest Neighbor
 
+[Source code](https://github.com/zain3ie/ml_from_scratch)
+
 k-NN (k-Nearest Neighbors) adalah salah satu algoritma machine learning yang paling sederhana yang digunakan untuk melakukan klasifikasi atau regresi pada data.
 
 <center>
@@ -309,3 +311,6 @@ print('scratch model accuracy: %.2f%%' % scratch_accuracy)
 ---
 - Materi kelas Pacmann Advanced Machine Learning : Nearest Neighbor
 - [STAT 479: Machine Learning Lecture Notes](https://sebastianraschka.com/pdf/lecture-notes/stat479fs18/02_knn_notes.pdf)
+
+## Sorce code
+- [sleep health analysis](https://github.com/zain3ie/ml_from_scratch)
