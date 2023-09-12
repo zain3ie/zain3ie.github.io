@@ -1,0 +1,1004 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ml_process/">
+      
+      
+        <link rel="next" href="../../statistics/sleep_health/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
+    
+    
+      
+        <title>Anime Recommender System - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#anime-recommender-system" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Anime Recommender System
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to MkDocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data sciences
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Data sciences
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../k_nearest_neighbors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    k-Nearest Neighbor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml_process/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Send Artificial Object to Moon - Survival Prediction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Anime Recommender System
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Anime Recommender System
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#business-objectives" class="md-nav__link">
+    Business Objectives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommender-system" class="md-nav__link">
+    Recommender System
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommender System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#content-based-filtering" class="md-nav__link">
+    Content based filtering
+  </a>
+  
+    <nav class="md-nav" aria-label="Content based filtering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelling" class="md-nav__link">
+    Modelling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collaborative-filtering-dengan-funk-svd" class="md-nav__link">
+    Collaborative filtering dengan Funk SVD
+  </a>
+  
+    <nav class="md-nav" aria-label="Collaborative filtering dengan Funk SVD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workflow_1" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelling_1" class="md-nav__link">
+    Modelling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-source" class="md-nav__link">
+    Data source
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content-based-filtering_1" class="md-nav__link">
+    Content based filtering
+  </a>
+  
+    <nav class="md-nav" aria-label="Content based filtering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#categorical-features-jaccard-similarity-function" class="md-nav__link">
+    Categorical features + jaccard similarity function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numerical-features-euclidean-similarity-function" class="md-nav__link">
+    Numerical features + euclidean similarity function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numerical-categorical-features-pearson-similarity-function" class="md-nav__link">
+    Numerical + categorical features + pearson similarity function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collaboration-filtering" class="md-nav__link">
+    Collaboration filtering
+  </a>
+  
+    <nav class="md-nav" aria-label="Collaboration filtering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommendation-for-user-id-100" class="md-nav__link">
+    Recommendation for user id 100
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommendation-for-user-id-500" class="md-nav__link">
+    Recommendation for user id 500
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sorce-code" class="md-nav__link">
+    Sorce code
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Statistics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Statistics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../statistics/sleep_health/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sleep Health Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#business-objectives" class="md-nav__link">
+    Business Objectives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommender-system" class="md-nav__link">
+    Recommender System
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommender System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#content-based-filtering" class="md-nav__link">
+    Content based filtering
+  </a>
+  
+    <nav class="md-nav" aria-label="Content based filtering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelling" class="md-nav__link">
+    Modelling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collaborative-filtering-dengan-funk-svd" class="md-nav__link">
+    Collaborative filtering dengan Funk SVD
+  </a>
+  
+    <nav class="md-nav" aria-label="Collaborative filtering dengan Funk SVD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workflow_1" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelling_1" class="md-nav__link">
+    Modelling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-source" class="md-nav__link">
+    Data source
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content-based-filtering_1" class="md-nav__link">
+    Content based filtering
+  </a>
+  
+    <nav class="md-nav" aria-label="Content based filtering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#categorical-features-jaccard-similarity-function" class="md-nav__link">
+    Categorical features + jaccard similarity function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numerical-features-euclidean-similarity-function" class="md-nav__link">
+    Numerical features + euclidean similarity function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numerical-categorical-features-pearson-similarity-function" class="md-nav__link">
+    Numerical + categorical features + pearson similarity function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collaboration-filtering" class="md-nav__link">
+    Collaboration filtering
+  </a>
+  
+    <nav class="md-nav" aria-label="Collaboration filtering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommendation-for-user-id-100" class="md-nav__link">
+    Recommendation for user id 100
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommendation-for-user-id-500" class="md-nav__link">
+    Recommendation for user id 500
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sorce-code" class="md-nav__link">
+    Sorce code
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="anime-recommender-system">Anime Recommender System</h1>
+<p><a href="https://github.com/zain3ie/recomender_system">Source code</a></p>
+<h2 id="business-objectives">Business Objectives</h2>
+<hr />
+<p>Dunia anime sangat luas, ada hingga ribuan judul yang tersedia. Penggemar anime sering kali harus bergantung pada pengetahuan mereka sendiri atau rekomendasi dari teman-teman untuk menemukan anime baru. Ini dapat menjadi tantangan, terutama bagi penggemar yang baru mengenal anime. Tanpa panduan, mungkin merasa sulit untuk menemukan anime yang sesuai dengan selera mereka diantara banyak pilihan.</p>
+<p>Memilih anime yang tidak sesuai dengan preferensi pribadi dapat mengakibatkan pengalaman menonton yang kurang memuaskan. Beberapa penggemar mungkin menghabiskan waktu menonton anime yang akhirnya tidak mereka nikmati. Beberapa anime populer mungkin mendapatkan banyak perhatian, sementara anime yang bagus tetapi kurang dikenal bisa saja terlupakan.</p>
+<p>Salah satu solusi untuk mengatasi masalah tersebut adalah dengan mengembangkan algoritma rekomendasi yang dapat menganalisis preferensi penggemar berdasarkan riwayat menonton dan berdasarkan penilaian terhadap anime yang di tonton. Kemudian algoritma ini memberikan rekomendasi anime yang sesuai. Ini dapat membantu penggemar anime menemukan anime baru yang lebih cocok dengan minat mereka dan menghindari potensi kekecewaan.</p>
+<h2 id="recommender-system">Recommender System</h2>
+<hr />
+<p>Karena setiap orang mempunyai karakter kesukaan yang berbeda-beda, maka rekomendasi yang tepat adalah <em>personalized recomender system</em>. Kemudian kita akan menggunakan sistem <em>hybrid</em> yang merupakan gabungan dari <em>content based filtering</em> dan <em>colaborative filtering</em>.</p>
+<h3 id="content-based-filtering">Content based filtering</h3>
+<hr />
+<p><em>Content based filtering</em> adalah teknik dalam sistem rekomendasi yang memberikan rekomendasi berdasarkan kesesuaian antara preferensi pengguna dengan karakteristik anime yang telah diketahui sebelumnya.</p>
+<p align="center">
+    <img src="images/content-base-filtering.jpg">
+</p>
+
+<h4 id="workflow">Workflow</h4>
+<ol>
+<li>
+<p><em>Feature extraction</em></p>
+<p>Sistem mengumpulkan data mengenai karakteristik dari setiap anime. Dalam projek ini kita akan menggunakan <em>genre</em>, <em>type</em>, jumlah episode, <em>rating</em>, dan jumlah <em>member</em>.</p>
+</li>
+<li>
+<p><em>User profile</em></p>
+<p>Sistem memahami preferensi pengguna dengan riwayat anime yang ditonton. Dalam hal ini kita akan melihat anime terakhir yang ditonton.</p>
+</li>
+<li>
+<p><em>Feature comparison</em></p>
+<p>Sistem membandingkan vektor fitur dari <em>user profile</em> dengan vektor fitur dari anime yang tersedia.</p>
+</li>
+<li>
+<p>Rekomendasi</p>
+<p>Berdasarkan perbandingan fitur, sistem memberikan rekomendasi kepada pengguna. Anime yang memiliki kesesuaian tertinggi dengan profil pengguna akan direkomendasikan.</p>
+</li>
+</ol>
+<h4 id="modelling">Modelling</h4>
+<ol>
+<li>
+<p>Importing data</p>
+<ol>
+<li>Load data</li>
+<li>Check data shapes and types</li>
+<li>Check duplicates data</li>
+<li>Data cleaning</li>
+</ol>
+</li>
+<li>
+<p>Data preparation</p>
+<ol>
+<li>Numerical data</li>
+<li>Categorical data (with OHE)</li>
+<li>Combine numerical and categorical data</li>
+</ol>
+</li>
+<li>
+<p>Content based recommendations: using last activity data</p>
+<ol>
+<li>Create similarity functions<ul>
+<li>Jaccard similarity</li>
+<li>Euclidean similarity</li>
+<li>Cosine similarity</li>
+<li>Pearson correlation similarity</li>
+</ul>
+</li>
+<li>Find similar anime based on user last watch anime</li>
+</ol>
+</li>
+</ol>
+<h3 id="collaborative-filtering-dengan-funk-svd">Collaborative filtering dengan Funk SVD</h3>
+<hr />
+<p>Funk SVD (<em>Singular Value Decomposition</em>) adalah salah satu teknik yang digunakan dalam c<em>ollaborative filtering</em> untuk menghasilkan rekomendasi personalisasi kepada pengguna berdasarkan data historis anime yang ditonton.</p>
+<p align="center">
+    <img src="images/collaborative-filtering.jpg">
+</p>
+
+<h4 id="workflow_1">Workflow</h4>
+<ol>
+<li>
+<p>Pengumpulan data</p>
+<p>Data penggunaan yang mencakup interaksi pengguna dengan anime (misalnya rating yang diberikan) dikumpulkan dan disimpan dalam bentuk <em>utility matrix</em>.</p>
+</li>
+<li>
+<p>Inisialisasi</p>
+<p><em>Utility matrix</em> diinisialisasi dengan nilai-nilai awal yang kecil atau secara acak</p>
+</li>
+<li>
+<p>Optimisasi</p>
+<p>Model Funk SVD melatih <em>utility matrix</em> untuk meminimalkan kesalahan prediksi terhadap data penggunaan yang ada. Ini dilakukan dengan mengoptimalkan fungsi tujuan yang mencoba meminimalkan perbedaan antara nilai aktual dan nilai prediksi dalam <em>utility matrix</em>.</p>
+</li>
+<li>
+<p>Penyesuaian faktor laten</p>
+<p>Selama pelatihan, model Funk SVD menyesuaikan <em>utility matrix</em> dengan menghasilkan faktor-faktor laten yang mewakili karakteristik tersembunyi dari pengguna dan anime. Model ini mencoba untuk memahami pola-pola yang mendasari preferensi pengguna dan sifat anime.</p>
+</li>
+<li>
+<p>Prediksi rekomendasi</p>
+<p>Setelah pelatihan selesai, model Funk SVD dapat digunakan untuk membuat prediksi peringkat atau perkiraan rating pengguna untuk anime yang belum dia interaksikan. Ini dilakukan dengan mengalikan matriks faktor laten pengguna dan matriks faktor laten anime yang diinginkan.</p>
+</li>
+<li>
+<p>Rekomendasi</p>
+<p>Model menghasilkan daftar rekomendasi berdasarkan prediksi peringkat. Anime dengan prediksi peringkat tertinggi direkomendasikan kepada pengguna.</p>
+</li>
+<li>
+<p>Evaluasi dan umpan balik</p>
+<p>Kualitas rekomendasi dievaluasi dengan mengukur sejauh mana prediksi model cocok dengan preferensi pengguna sebenarnya. Dalam siklus ini, umpan balik dari pengguna dapat digunakan untuk meningkatkan kualitas rekomendasi di masa mendatang.</p>
+</li>
+</ol>
+<h4 id="modelling_1">Modelling</h4>
+<ol>
+<li>
+<p>Importing data</p>
+<ol>
+<li>Load data</li>
+<li>Check data shapes and types</li>
+<li>Handle duplicates data</li>
+</ol>
+</li>
+<li>
+<p>Modelling: funk SVD</p>
+<ol>
+<li>Mapping <code>user</code> and <code>anime</code></li>
+<li>Generate user factor (𝑝𝑢) and item factor (𝑞𝑖)</li>
+<li>Training</li>
+</ol>
+</li>
+<li>
+<p>Predictions/generating recommendation</p>
+<ol>
+<li>Predict recommendation of user-i to unrated item-j</li>
+<li>Predict recommendation of user-i to all their unrated items</li>
+</ol>
+</li>
+</ol>
+<h2 id="implementation">Implementation</h2>
+<hr />
+<h3 id="data-source">Data source</h3>
+<hr />
+<p>Dataset dalam project ini diambil dari Anime Recommendations Database di kaggle. Dataset dapat dilihat pada <a href="https://www.kaggle.com/datasets/CooperUnion/anime-recommendations-database">link ini</a>.</p>
+<h3 id="content-based-filtering_1">Content based filtering</h3>
+<hr />
+<p>Dibawah merupakan hasil rekomendasi <em>content based filtering</em> dengan menggunakan berbagai fitur dan fungsi jarak. Walaupun semuanya merupakan rekomendasi terhadap anime <code>Fullmetal Alchemist: Brotherhood</code>, namun terdapat perbedaan pada rekomendasi yang diberikan.</p>
+<h4 id="categorical-features-jaccard-similarity-function">Categorical features + jaccard similarity function</h4>
+<p><img alt="" src="images/categorical-jaccard.png" /></p>
+<h4 id="numerical-features-euclidean-similarity-function">Numerical features + euclidean similarity function</h4>
+<p><img alt="" src="images/numerical-euclidean.png" /></p>
+<h4 id="numerical-categorical-features-pearson-similarity-function">Numerical + categorical features + pearson similarity function</h4>
+<p><img alt="" src="images/combination-pearson.png" /></p>
+<h3 id="collaboration-filtering">Collaboration filtering</h3>
+<hr />
+<p>Berikut hasil rekomendasi dari <em>colaborative filtering</em> untuk user id 100 dan user id 500.</p>
+<h4 id="recommendation-for-user-id-100">Recommendation for user id 100</h4>
+<p><img alt="" src="images/collaboration-uid-100.png" /></p>
+<h4 id="recommendation-for-user-id-500">Recommendation for user id 500</h4>
+<p><img alt="" src="images/collaboration-uid-500.png" /></p>
+<h2 id="references">References</h2>
+<hr />
+<ul>
+<li>Materi kelas Pacmann Recommender System</li>
+<li><a href="https://divyeshprajapati100.medium.com/introduction-to-movie-recommendation-system-for-beginners-a12987d94adc">Introduction to Movie Recommendation System for Beginners</a></li>
+</ul>
+<h2 id="sorce-code">Sorce code</h2>
+<hr />
+<ul>
+<li><a href="https://github.com/zain3ie/recomender_system">recommender system</a></li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
